@@ -1,0 +1,7 @@
+/eleonesqld
+/eleonesql
+*.edb
+*.wal
+*.test
+/dist/
+.DS_Store
