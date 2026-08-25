@@ -1,0 +1,80 @@
+name: Release
+
+# Triggers on any tag push matching v* (e.g. v0.1.0, v1.2.3).
+# Builds eleonesqld + eleonesql for linux/darwin/windows on amd64+arm64,
+# packages each as a .tar.gz (.zip on Windows) with the README/LICENSE,
+# and attaches them all to a GitHub Release for that tag.
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - goos: linux
+            goarch: amd64
+          - goos: linux
+            goarch: arm64
+          - goos: darwin
+            goarch: amd64
+          - goos: darwin
+            goarch: arm64
+          - goos: windows
+            goarch: amd64
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Build
+        env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+          CGO_ENABLED: 0
+        run: |
+          set -e
+          VERSION="${GITHUB_REF_NAME}"
+          EXT=""
+          if [ "$GOOS" = "windows" ]; then EXT=".exe"; fi
+          OUT="dist/eleonesql-${VERSION}-${GOOS}-${GOARCH}"
+          mkdir -p "$OUT"
+          go build -ldflags "-s -w -X main.version=${VERSION}" -o "$OUT/eleonesqld${EXT}" ./cmd/eleonesqld
+          go build -ldflags "-s -w -X main.version=${VERSION}" -o "$OUT/eleonesql${EXT}"  ./cmd/eleonesql
+          cp README.md LICENSE "$OUT/"
+          cd dist
+          if [ "$GOOS" = "windows" ]; then
+            zip -qr "eleonesql-${VERSION}-${GOOS}-${GOARCH}.zip" "eleonesql-${VERSION}-${GOOS}-${GOARCH}"
+          else
+            tar -czf "eleonesql-${VERSION}-${GOOS}-${GOARCH}.tar.gz" "eleonesql-${VERSION}-${GOOS}-${GOARCH}"
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ matrix.goos }}-${{ matrix.goarch }}
+          path: |
+            dist/*.tar.gz
+            dist/*.zip
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true
