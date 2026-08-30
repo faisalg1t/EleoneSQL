@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/faisalg1t/EleoneSQL/internal/txn"
+	"github.com/faisaljs/EleoneSQL/internal/txn"
 )
 
 func newTestSession(t *testing.T) (*Session, string, string) {

@@ -3,10 +3,10 @@ package engine
 import (
 	"fmt"
 
-	"github.com/faisalg1t/EleoneSQL/internal/catalog"
-	"github.com/faisalg1t/EleoneSQL/internal/sqlparser"
-	"github.com/faisalg1t/EleoneSQL/internal/txn"
-	"github.com/faisalg1t/EleoneSQL/internal/util"
+	"github.com/faisaljs/EleoneSQL/internal/catalog"
+	"github.com/faisaljs/EleoneSQL/internal/sqlparser"
+	"github.com/faisaljs/EleoneSQL/internal/txn"
+	"github.com/faisaljs/EleoneSQL/internal/util"
 )
 
 func (s *Session) execInsert(t *txn.Txn, st *sqlparser.InsertStmt) (*Result, error) {

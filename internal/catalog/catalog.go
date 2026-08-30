@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/faisalg1t/EleoneSQL/internal/storage"
+	"github.com/faisaljs/EleoneSQL/internal/storage"
 )
 
 // ColumnDef describes one column of a table.

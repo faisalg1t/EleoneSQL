@@ -3,8 +3,8 @@ package engine
 import (
 	"fmt"
 
-	"github.com/faisalg1t/EleoneSQL/internal/catalog"
-	"github.com/faisalg1t/EleoneSQL/internal/sqlparser"
+	"github.com/faisaljs/EleoneSQL/internal/catalog"
+	"github.com/faisaljs/EleoneSQL/internal/sqlparser"
 )
 
 // Binding is one table's contribution to the current row during execution

@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/faisalg1t/EleoneSQL/internal/catalog"
-	"github.com/faisalg1t/EleoneSQL/internal/sqlparser"
-	"github.com/faisalg1t/EleoneSQL/internal/storage"
+	"github.com/faisaljs/EleoneSQL/internal/catalog"
+	"github.com/faisaljs/EleoneSQL/internal/sqlparser"
+	"github.com/faisaljs/EleoneSQL/internal/storage"
 )
 
 // DDL statements are not WAL-logged individually (see internal/txn docs);

@@ -19,9 +19,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/faisalg1t/EleoneSQL/internal/catalog"
-	"github.com/faisalg1t/EleoneSQL/internal/storage"
-	"github.com/faisalg1t/EleoneSQL/internal/wal"
+	"github.com/faisaljs/EleoneSQL/internal/catalog"
+	"github.com/faisaljs/EleoneSQL/internal/storage"
+	"github.com/faisaljs/EleoneSQL/internal/wal"
 )
 
 // Store bundles a database's on-disk state: page file, catalog, and WAL.

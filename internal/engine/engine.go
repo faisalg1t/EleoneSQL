@@ -5,9 +5,9 @@ package engine
 import (
 	"fmt"
 
-	"github.com/faisalg1t/EleoneSQL/internal/catalog"
-	"github.com/faisalg1t/EleoneSQL/internal/sqlparser"
-	"github.com/faisalg1t/EleoneSQL/internal/txn"
+	"github.com/faisaljs/EleoneSQL/internal/catalog"
+	"github.com/faisaljs/EleoneSQL/internal/sqlparser"
+	"github.com/faisaljs/EleoneSQL/internal/txn"
 )
 
 // Result is the outcome of executing one statement.

@@ -1,9 +1,9 @@
 package engine
 
 import (
-	"github.com/faisalg1t/EleoneSQL/internal/catalog"
-	"github.com/faisalg1t/EleoneSQL/internal/sqlparser"
-	"github.com/faisalg1t/EleoneSQL/internal/txn"
+	"github.com/faisaljs/EleoneSQL/internal/catalog"
+	"github.com/faisaljs/EleoneSQL/internal/sqlparser"
+	"github.com/faisaljs/EleoneSQL/internal/txn"
 )
 
 // fetchAllRows materializes every row of a table as parallel slices of row

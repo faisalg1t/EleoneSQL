@@ -8,8 +8,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/faisalg1t/EleoneSQL/internal/server"
-	"github.com/faisalg1t/EleoneSQL/internal/txn"
+	"github.com/faisaljs/EleoneSQL/internal/server"
+	"github.com/faisaljs/EleoneSQL/internal/txn"
 )
 
 func main() {

@@ -13,9 +13,9 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"github.com/faisalg1t/EleoneSQL/internal/engine"
-	"github.com/faisalg1t/EleoneSQL/internal/server/wire"
-	"github.com/faisalg1t/EleoneSQL/internal/txn"
+	"github.com/faisaljs/EleoneSQL/internal/engine"
+	"github.com/faisaljs/EleoneSQL/internal/server/wire"
+	"github.com/faisaljs/EleoneSQL/internal/txn"
 )
 
 func main() {

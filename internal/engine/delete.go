@@ -3,8 +3,8 @@ package engine
 import (
 	"fmt"
 
-	"github.com/faisalg1t/EleoneSQL/internal/sqlparser"
-	"github.com/faisalg1t/EleoneSQL/internal/txn"
+	"github.com/faisaljs/EleoneSQL/internal/sqlparser"
+	"github.com/faisaljs/EleoneSQL/internal/txn"
 )
 
 func (s *Session) execDelete(t *txn.Txn, st *sqlparser.DeleteStmt) (*Result, error) {

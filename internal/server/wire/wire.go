@@ -25,8 +25,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/faisalg1t/EleoneSQL/internal/catalog"
-	"github.com/faisalg1t/EleoneSQL/internal/engine"
+	"github.com/faisaljs/EleoneSQL/internal/catalog"
+	"github.com/faisaljs/EleoneSQL/internal/engine"
 )
 
 // WriteResult serializes a *engine.Result to w following the protocol above.

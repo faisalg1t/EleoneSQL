@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/faisalg1t/EleoneSQL/internal/util"
+	"github.com/faisaljs/EleoneSQL/internal/util"
 )
 
 // Type is a column's SQL data type.
